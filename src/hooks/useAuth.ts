@@ -26,7 +26,7 @@ const useAuth = () => {
       .then(response => {
         console.log(response);
         toast.success('Login efetuado com sucesso');
-        router.push(process.env.SYSTEM_URL || '/');
+        router.push(process.env.COGNAI_URL || '/');
         setIsLoadingLogin(false);
 
         // window.location.reload();
