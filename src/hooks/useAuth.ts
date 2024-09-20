@@ -24,9 +24,11 @@ const useAuth = () => {
       body: JSON.stringify({ email, password }),
     })
       .then(response => {
-        console.log(response);
+        console.log(process.env.NEXT_PUBLIC_COGNAI_URL);
         toast.success('Login efetuado com sucesso');
-        router.push(process.env.COGNAI_URL || '/');
+        router.push(
+          `${process.env.NEXT_PUBLIC_COGNAI_URL}?e363401f-fc7c-4b22-a431-170552cc9817=1` || '/'
+        );
         setIsLoadingLogin(false);
 
         // window.location.reload();
